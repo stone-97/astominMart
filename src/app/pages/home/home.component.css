@@ -1,0 +1,727 @@
+.equal-height-banner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutters > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.equal-height-banner > div {
+    height: 400px; /* match heights */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    background: rgba(0,0,0,0.4);
+}
+
+
+
+
+
+/* Increase banner row height */
+.hero-banner {
+    height: 400px; /* Adjust height as needed */
+
+}
+
+/* Make video and image fill the column */
+.hero-banner .hero-col video,
+.hero-banner .hero-col img {
+    width: 100%;       /* full width of the column */
+    height: 100%;      /* full height of the row */
+    object-fit: cover; /* maintain aspect ratio, cover column fully */
+}
+
+
+
+
+
+/* features */
+/* Default text color */
+.single-features h6,
+.single-features p {
+    color: #ffffff;     /* White text */
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* Hover text color */
+.single-features:hover h6,
+.single-features:hover p {
+    color: #ffba00;     /* Text turns #ffba00 on hover */
+}
+
+
+/* Default text color for the four headings */
+.single-features h6 {
+    color: #ffba00;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover → text becomes white */
+.single-features:hover h6 {
+    color: #ffffff;
+}
+
+
+
+.carousel2-container {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.carousel2-track {
+  display: flex;
+  gap: 20px;
+  animation: carousel2-scroll var(--speed, 20s) linear infinite;
+}
+
+/* Default speed */
+.carousel2-container {
+  --speed: 70s;
+}
+
+/* ✅ Slow down on hover */
+.carousel2-container:hover {
+  --speed: 100s; /* slower movement instead of instant stop */
+}
+
+@keyframes carousel2-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.carousel2-card {
+  position: relative;
+  width: 260px;            /* wider to fit main + extra images */
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.carousel2-ribbon {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: red;
+  color: #fff;
+  padding: 3px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+  z-index: 5;              /* stays above images even on hover */
+}
+
+/* Image row: main on the left, extras stacked on the right */
+.carousel2-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* push extra images to far right */
+  gap: 12px;
+}
+
+.carousel2-main {
+  width: 160px;            /* bigger main image */
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+
+.carousel2-extra {
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  gap: 8px;
+}
+
+.carousel2-extra img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+
+/* Hover animations (both main and extra images) */
+.carousel2-main:hover,
+.carousel2-extra img:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Product details */
+.carousel2-details { margin-top: 10px; }
+
+.carousel2-name {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.carousel2-price {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.carousel2-actual { font-weight: bold; color: #000; }
+
+.carousel2-discount { text-decoration: line-through; color: gray; }
+
+.carousel2-brand { font-size: 13px; color: #555; margin-bottom: 5px; }
+
+.carousel2-rating i { color: gold; font-size: 13px; }
+
+
+
+
+
+/* logo movement */
+
+.logo-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+ 
+}
+
+.logo-track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  animation: bounce 20s ease-in-out infinite;
+}
+
+.logo-track img {
+  width: 200px;   /* set equal size */
+  height: 140px;
+  object-fit: contain;
+}
+
+/* Bounce: show first logos → slide until last logos → bounce back */
+@keyframes bounce {
+  0%   { transform: translateX(0); }        /* show first logo */
+  50%  { transform: translateX(-100%); }    /* slide until last logo shows */
+  100% { transform: translateX(0); }        /* bounce back to start */
+}
+/* Slow motion on hover */
+.logo-track:hover {
+  animation-play-state: running;
+  animation-duration: 60s; /* slows it down 3x */
+  cursor: pointer;
+}
+
+
+/* .slider-container */
+
+/* Wrapper */
+.slider-wrapper {
+  width: 100%;
+  height: 700px;      /* Increased height */
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;   /* Space from navbar */
+  
+}
+
+/* Slider container */
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Each slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideAnimation 25s infinite;
+}
+
+/* Blow-in animation */
+@keyframes slideAnimation {
+  0% { opacity: 1; transform: scale(1); }
+  16% { opacity: 1; transform: scale(1); }
+  20% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 0; }
+}
+
+/* Animation delays */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+.slide:nth-child(4) { animation-delay: 15s; }
+.slide:nth-child(5) { animation-delay: 20s; }
+
+/* MAKE IMAGE FILL SCREEN FULLY (NO BLACK BARS) */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* Fills container fully */
+  object-position: center;
+}
+
+/* Buttons */
+.slider-buttons {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.shop-btn { background: red; color: white; }
+.contact-btn { background: black; color: white; }
+
+.btn:hover { opacity: 0.85; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-wrapper { height: 380px; }
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper { height: 300px; }
+  .btn { padding: 10px 20px; font-size: 15px; }
+}
+
+
+
+
+
+
+/* Stats Section */
+.stat-box {
+  background-color: #002147;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+  padding: 20px;         /* ← use ONE padding value */
+}
+
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.counter {
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.stat-box:hover .counter {
+  color: #ffba00;
+}
+
+
+/* Slider */
+.slider-container {
+  position: relative;
+  width: 95%;              /* leave small space on both sides */
+  max-width: 1200px;       /* prevents images from stretching too wide */
+  height: 500px;
+  margin: 160px auto 0;    /* center horizontally */
+  overflow: hidden;
+  border-radius: 8px;      /* optional rounded edges */
+  z-index: 0;              /* ensure slider is below clickable elements */
+}
+
+.slider-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff;
+  opacity: 0;
+  animation: fadeBlow 49s infinite;
+  margin-top: 50px;
+
+  /* ✅ Fixes the blocking issue */
+  z-index: -1;             /* send images behind other elements */
+  pointer-events: none;    /* allow clicks through invisible images */
+}
+
+/* Loop images with delays */
+.slider-container img:nth-child(1) { animation-delay: 0s; }
+.slider-container img:nth-child(2) { animation-delay: 7s; }
+.slider-container img:nth-child(3) { animation-delay: 14s; }
+.slider-container img:nth-child(4) { animation-delay: 21s; }
+.slider-container img:nth-child(5) { animation-delay: 28s; }
+.slider-container img:nth-child(6) { animation-delay: 35s; }
+.slider-container img:nth-child(7) { animation-delay: 42s; }
+
+/* Blowing fade animation */
+@keyframes fadeBlow {
+  0% { opacity: 0; transform: scale(1); }
+  5% { opacity: 1; transform: scale(1.02); }
+  20% { opacity: 1; transform: scale(1.05); } /* gentle blow */
+  25% { opacity: 0; transform: scale(1.08); }
+  100% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+.banner-section {
+  position: relative;
+  width: 120%;
+  height: 120px; /* adjusted height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(90deg, yellow, red);
+  overflow: hidden;
+}
+
+/* Main text blinking */
+.banner-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 3;
+  margin-right: 100px;
+  position: relative;
+  animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+  0% { color: white; }
+  100% { color: yellow; }
+}
+
+/* Watermark scrolling */
+.banner-overlay:before {
+  content: "ASTONIC MART • ASTONIC MART • ASTONIC MART • ASTONIC MART • ASTONIC MART • ASTONIC MART • ";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 200%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  z-index: 1;
+  animation: scrollWatermark 30s linear infinite;
+}
+
+@keyframes scrollWatermark {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Background sketch icons */
+.banner-overlay:after {
+  content: "⚙ 🛡 🦺 🔧";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.3); /* more visible */
+  text-align: center;
+  letter-spacing: 100px;
+  line-height: 140px;
+  z-index: 2;
+  animation: flash 5s infinite alternate;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4); /* glow effect */
+}
+
+@keyframes flash {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.4; }
+}
+
+
+
+
+/* .logo-container */
+/* Container hides overflow */
+.logo-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100px;
+}
+
+/* Track: flex row with duplicated logos */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  animation: pingpong 5s linear infinite alternate;
+}
+
+/* Logos */
+.logo-track img {
+  max-height: 80px;
+  width: 100px;
+  object-fit: contain;
+}
+
+/* Ping-Pong Animation: move left → right and back */
+@keyframes pingpong {
+  0% {
+    transform: translateX(0); /* start at beginning */
+  }
+  100% {
+    transform: translateX(-50%); /* scroll to the end (half the track) */
+  }
+}
+
+
+.top-brands-label {
+  top: -50px; /* adjust to bring it just above logos */
+  left: 0;
+  background: linear-gradient(90deg, black, #FFD700);
+  padding: 5px 15px;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+
+
+
+
+/* Image container */
+.img-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.18);
+  padding: 8px;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+/* ASH COLOR BOTTOM AREA */
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;             /* height of the ash strip */
+  background: #e9e9e9;      /* soft ash color */
+  opacity: 0.9;             /* not too bright */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 1;
+}
+
+/* Make sure the logo tag stays ABOVE the ash color */
+.brand-tag {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+/* Product image */
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  display: block;
+}
+
+/* Hover animation */
+.img-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  border-color: #041e38;
+}
+
+.img-wrapper:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+
+/* ------------------------------ */
+/* NEW ELEMENTS BELOW             */
+/* ------------------------------ */
+
+/* Discount badge (top-left) */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  background:  #041e38;
+  color: white;
+  padding: 6px 12px;
+
+  font-size: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* Website name tag (bottom-right) */
+.brand-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  padding: 6px 12px;
+  font-size: 8px;
+  font-weight: bold;
+  color: black;
+
+  background: linear-gradient(135deg, orange,navy);
+  border-radius: 30px;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+/* Responsive sizes */
+@media (max-width: 768px) {
+  .img-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .img-wrapper {
+    height: 180px;
+  }
+}
+
+
+
+
+
+.testimonial-section {
+  background: #f8f9fa;
+  padding: 60px 0; /* Increase top and bottom padding */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  height: 100%; /* Ensure card takes full column height */
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+.testimonial-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.carousel-item {
+  padding: 20px 0; /* Add vertical spacing so slides don’t touch edges */
+}
+
+.carousel-inner {
+  display: flex;           /* Use flexbox to keep row heights consistent */
+  flex-direction: column;
+}
+
+.row.g-4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.control-icon {
+  background-color: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+}
