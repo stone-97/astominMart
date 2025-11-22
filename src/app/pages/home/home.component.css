@@ -1,34 +1,69 @@
-.equal-height-banner {
+
+
+/* .slider-img */
+
+
+
+/* slider ends */
+
+
+/* start section */
+.stats-section .container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* banner begins */
+/* Wrapper to control width, centering, and spacing */
+.hero-banner-wrapper {
     display: flex;
-    flex-wrap: wrap;
+    max-width: 1600px;    /* max width of the banner */
+    margin: 0 auto;        /* center the wrapper */
+    height: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px;    /* <-- space on the left edge */
+    padding-right: 30px;   /* <-- space on the right edge */
 }
 
-.no-gutters {
-    margin-right: 0;
-    margin-left: 0;
+.add-bag-link {
+    display: inline-flex !important;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99;          /* ensures it's above other elements */
+    position: relative;   /* required for z-index */
 }
 
-.no-gutters > [class*='col-'] {
-    padding-right: 0;
-    padding-left: 0;
+.add-bag-link span {
+    pointer-events: none; /* ensures clicks pass through the spans to the <a> */
 }
 
-.banner-video {
+/* Left (video) and right (image) */
+.hero-col {
+    flex: 1;                     
+    position: relative;
+    padding: 0;                  
+}
+
+/* VIDEO styling */
+.hero-col video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.banner-image {
+/* IMAGE styling */
+.hero-col img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;         
+    display: block;
+    background: transparent;     
 }
 
-.equal-height-banner > div {
-    height: 400px; /* match heights */
-}
-
+/* Overlay on the video side */
 .banner-overlay {
     position: absolute;
     top: 0;
@@ -41,27 +76,38 @@
     justify-content: center;
     z-index: 2;
     color: white;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.3);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 991px) {
+    .hero-banner-wrapper {
+        flex-direction: column;   /* Stack video and image vertically */
+        height: auto;             /* Let height adjust automatically */
+        padding: 0 15px;          /* Slight padding on mobile */
+    }
+
+    .hero-col {
+        height: 300px;            /* Adjust height for mobile */
+        margin-bottom: 20px;      /* Space between video and image */
+    }
+
+    .hero-col:last-child {
+        margin-bottom: 0;
+    }
+
+    .hero-col video,
+    .hero-col img {
+        height: 100%;             /* Fill the column height */
+    }
+
+    .banner-overlay {
+        padding: 20px;
+    }
 }
 
 
-
-
-
-/* Increase banner row height */
-.hero-banner {
-    height: 400px; /* Adjust height as needed */
-
-}
-
-/* Make video and image fill the column */
-.hero-banner .hero-col video,
-.hero-banner .hero-col img {
-    width: 100%;       /* full width of the column */
-    height: 100%;      /* full height of the row */
-    object-fit: cover; /* maintain aspect ratio, cover column fully */
-}
-
+/* banner ends */
 
 
 
@@ -73,8 +119,6 @@
     color: #ffffff;     /* White text */
     transition: 0.3s ease-in-out;
 }
-
-
 
 /* Hover text color */
 .single-features:hover h6,
@@ -93,6 +137,22 @@
 .single-features:hover h6 {
     color: #ffffff;
 }
+.features-area .container {
+    max-width: 100% !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 576px) {
+    .features-area .container {
+        padding-left: 70px !important;
+        padding-right: 70px !important;
+    }
+}
+
+
 
 
 
@@ -254,97 +314,6 @@
 }
 
 
-/* .slider-container */
-
-/* Wrapper */
-.slider-wrapper {
-  width: 100%;
-  height: 700px;      /* Increased height */
-  position: relative;
-  overflow: hidden;
-  margin-top: 25px;   /* Space from navbar */
-  
-}
-
-/* Slider container */
-.slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* Each slide */
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: scale(0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slideAnimation 25s infinite;
-}
-
-/* Blow-in animation */
-@keyframes slideAnimation {
-  0% { opacity: 1; transform: scale(1); }
-  16% { opacity: 1; transform: scale(1); }
-  20% { opacity: 0; transform: scale(0.85); }
-  100% { opacity: 0; }
-}
-
-/* Animation delays */
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 5s; }
-.slide:nth-child(3) { animation-delay: 10s; }
-.slide:nth-child(4) { animation-delay: 15s; }
-.slide:nth-child(5) { animation-delay: 20s; }
-
-/* MAKE IMAGE FILL SCREEN FULLY (NO BLACK BARS) */
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;    /* Fills container fully */
-  object-position: center;
-}
-
-/* Buttons */
-.slider-buttons {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-
-.btn {
-  padding: 14px 30px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 18px;
-}
-
-.shop-btn { background: red; color: white; }
-.contact-btn { background: black; color: white; }
-
-.btn:hover { opacity: 0.85; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .slider-wrapper { height: 380px; }
-}
-
-@media (max-width: 480px) {
-  .slider-wrapper { height: 300px; }
-  .btn { padding: 10px 20px; font-size: 15px; }
-}
-
-
-
 
 
 
@@ -373,51 +342,6 @@
   color: #ffba00;
 }
 
-
-/* Slider */
-.slider-container {
-  position: relative;
-  width: 95%;              /* leave small space on both sides */
-  max-width: 1200px;       /* prevents images from stretching too wide */
-  height: 500px;
-  margin: 160px auto 0;    /* center horizontally */
-  overflow: hidden;
-  border-radius: 8px;      /* optional rounded edges */
-  z-index: 0;              /* ensure slider is below clickable elements */
-}
-
-.slider-container img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #fff;
-  opacity: 0;
-  animation: fadeBlow 49s infinite;
-  margin-top: 50px;
-
-  /* ✅ Fixes the blocking issue */
-  z-index: -1;             /* send images behind other elements */
-  pointer-events: none;    /* allow clicks through invisible images */
-}
-
-/* Loop images with delays */
-.slider-container img:nth-child(1) { animation-delay: 0s; }
-.slider-container img:nth-child(2) { animation-delay: 7s; }
-.slider-container img:nth-child(3) { animation-delay: 14s; }
-.slider-container img:nth-child(4) { animation-delay: 21s; }
-.slider-container img:nth-child(5) { animation-delay: 28s; }
-.slider-container img:nth-child(6) { animation-delay: 35s; }
-.slider-container img:nth-child(7) { animation-delay: 42s; }
-
-/* Blowing fade animation */
-@keyframes fadeBlow {
-  0% { opacity: 0; transform: scale(1); }
-  5% { opacity: 1; transform: scale(1.02); }
-  20% { opacity: 1; transform: scale(1.05); } /* gentle blow */
-  25% { opacity: 0; transform: scale(1.08); }
-  100% { opacity: 0; }
-}
 
 
 
@@ -538,7 +462,7 @@
 .top-brands-label {
   top: -50px; /* adjust to bring it just above logos */
   left: 0;
-  background: linear-gradient(90deg, black, #FFD700);
+  background: linear-gradient(90deg, navy, #FFD700);
   padding: 5px 15px;
   color: white;
   font-weight: bold;
@@ -666,62 +590,107 @@
 
 
 
-
-
-.testimonial-section {
+/* testimonial */
+/* Section */
+.testi-section {
   background: #f8f9fa;
-  padding: 60px 0; /* Increase top and bottom padding */
-  overflow: hidden; /* Prevent overflow issues */
+  padding: 40px 0;
 }
 
-.testimonial-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-  height: 100%; /* Ensure card takes full column height */
+.testi-title {
+  text-align: center;
+  color: #002b5c;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-6px);
+/* Slider wrapper */
+.testi-slider {
+  height: 330px;
+  position: relative;
+  overflow: hidden;
 }
 
-.testimonial-img {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.stars {
-  color: #ffc107;
-  margin-bottom: 10px;
-}
-
-.carousel-item {
-  padding: 20px 0; /* Add vertical spacing so slides don’t touch edges */
-}
-
-.carousel-inner {
-  display: flex;           /* Use flexbox to keep row heights consistent */
-  flex-direction: column;
-}
-
-.row.g-4 {
+/* Groups */
+.testi-group {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 20px;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: fadeSlide 18s infinite;
+  background: #f8f9fa; /* THIS FIXES THE WHITE FLASH */
 }
 
-.control-icon {
-  background-color: rgba(0,0,0,0.7);
-  padding: 20px;
+
+.testi-group:nth-child(1) { animation-delay: 0s; }
+.testi-group:nth-child(2) { animation-delay: 6s; }
+.testi-group:nth-child(3) { animation-delay: 12s; }
+
+/* Cards */
+.testi-card {
+  background: white;
+  width: 30%;
+  min-width: 250px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Images - FIXED NOW */
+.testi-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* Text */
+.stars { color: #f1c40f; margin-top: 5px; font-size: 14px; }
+.testi-card p { font-size: 13px; font-style: italic; color: #444; min-height: 55px; }
+.testi-card h4 { font-size: 14px; color: #002b5c; font-weight: 700; }
+
+/* Animation */
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Arrows */
+.testi-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #002b5c;
+  padding: 5px 12px;
+  background: rgba(255,255,255,0.8);
   border-radius: 50%;
+  z-index: 50;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  width: 60px;
+.testi-arrow.left { left: 15px; }
+.testi-arrow.right { right: 15px; }
+
+.testi-arrow:hover {
+  background: white;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testi-group { flex-direction: column; gap: 15px; }
+  .testi-card { width: 90%; margin: auto; }
+}
+
+/* testimonials end */
