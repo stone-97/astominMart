@@ -1,0 +1,14 @@
+#myCarousel {
+  height: 500px; /* you can change this */
+}
+
+#myCarousel .carousel-item {
+  height: 100%;
+}
+
+#myCarousel .slider-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;  /* Prevent cropping */
+  background-color: #000; /* Fills empty space */
+}
