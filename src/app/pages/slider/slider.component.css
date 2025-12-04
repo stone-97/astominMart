@@ -1,14 +1,20 @@
 #myCarousel {
-  height: 500px; /* you can change this */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
+/* Let the carousel height be defined by the natural image height */
 #myCarousel .carousel-item {
-  height: 100%;
+  height: auto;
 }
 
 #myCarousel .slider-img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;  /* Prevent cropping */
-  background-color: #000; /* Fills empty space */
+  width: 100%;        /* fill entire width */
+  height: auto;       /* adjust height naturally */
+  object-fit: contain; 
+  display: block;
 }
+
+

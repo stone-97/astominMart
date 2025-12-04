@@ -3,22 +3,6 @@
 /* .slider-img */
 
 
-/* Fix the height of the slider */
-#fullImageSlider {
-  height: 450px; /* Adjust height if needed */
-}
-
-#fullImageSlider .carousel-item {
-  height: 100%;
-  background: #000; /* Prevent empty space, optional */
-}
-
-#fullImageSlider .slider-img {
-  height: 100%;
-  object-fit: contain; /* Ensures NO image gets cropped */
-  background-color: #000; /* Makes empty space black */
-}
-
 /* slider ends */
 
 

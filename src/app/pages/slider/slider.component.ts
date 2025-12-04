@@ -14,20 +14,20 @@ export class SliderComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const element = this.myCarousel.nativeElement;
 
-    // Dispose any previous instance to avoid conflicts
+    // Dispose previous instance (avoid conflicts)
     const existing = bootstrap.Carousel.getInstance(element);
     if (existing) {
       existing.dispose();
     }
 
-    // Force initialize carousel
+    // Faster sliding: 2000ms
     const carousel = new bootstrap.Carousel(element, {
-      interval: 3000,
+      interval: 2000,  // speed improved
       ride: 'carousel',
       pause: 'hover',
       wrap: true
     });
 
-    carousel.cycle(); // Start sliding
+    carousel.cycle();
   }
 }
