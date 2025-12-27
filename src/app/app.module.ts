@@ -19,6 +19,9 @@ import { TrackorderComponent } from './pages/pages/trackorder/trackorder.compone
 import { DeliverypolicyComponent } from './pages/pages/deliverypolicy/deliverypolicy.component';
 import { WarrantyandreturnsComponent } from './pages/pages/warrantyandreturns/warrantyandreturns.component';
 import { FormsModule } from '@angular/forms';
+import { TermsandconditionsComponent } from './pages/pages/termsandconditions/termsandconditions.component';
+import { PrivacypolicyComponent } from './pages/pages/privacypolicy/privacypolicy.component';
+import { FaqComponent } from './pages/pages/faq/faq.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,9 @@ import { FormsModule } from '@angular/forms';
     TrackorderComponent,
     DeliverypolicyComponent,
     WarrantyandreturnsComponent,
+    TermsandconditionsComponent,
+    PrivacypolicyComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,

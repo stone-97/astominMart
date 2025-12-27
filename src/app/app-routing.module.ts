@@ -320,6 +320,9 @@ import { StanchionsComponent } from './pages/ppe/bycategory/securityandsurveilla
 import { PagesComponent } from './pages/pages/pages.component';
 import { DeliverypolicyComponent } from './pages/pages/deliverypolicy/deliverypolicy.component';
 import { WarrantyandreturnsComponent } from './pages/pages/warrantyandreturns/warrantyandreturns.component';
+import { TermsandconditionsComponent } from './pages/pages/termsandconditions/termsandconditions.component';
+import { PrivacypolicyComponent } from './pages/pages/privacypolicy/privacypolicy.component';
+import { FaqComponent } from './pages/pages/faq/faq.component';
 
 
 
@@ -332,7 +335,10 @@ const routes: Routes = [
   {path: "productcheckout" , component: ProductcheckoutComponent},
   {path: "pages", component:PagesComponent},
   {path: "login", component: LoginComponent},
-  {path: "tackorder", component: TrackorderComponent},
+  {path: "trackorder", component: TrackorderComponent},
+  {path: "faq", component:FaqComponent},
+  {path: "termsandconditions", component: TermsandconditionsComponent},
+  {path: "privacypolicy", component: PrivacypolicyComponent},
   {path: "deliverypolicy", component: DeliverypolicyComponent},
    {path: "warrantyandreturns", component: WarrantyandreturnsComponent},
   {path: "confirmation", component: ConfirmationComponent},

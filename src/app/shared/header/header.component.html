@@ -1,35 +1,678 @@
-
 <!-- navbar starts -->
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid px-4">
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
       <img src="../../../../assets/img/Astonic logo img.png" alt="Logo">
     </a>
 
-    <!-- Shop by Category Dropdown (close to logo) -->
-    <ul class="navbar-nav d-none d-lg-flex ms-3">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center text-white" href="#" id="shopDropdown"
-           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-list shop-icon me-2" style="color:#ffba00;"></i> Shop by Category
+    <!-- Desktop Shop by Category Dropdown -->
+  <ul class="navbar-nav d-none d-lg-flex ms-3">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle d-flex align-items-center text-white" href="#" id="shopDropdown"
+       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-list shop-icon me-2" style="color:#ffba00;"></i> Shop by Category
+    </a>
+
+    <ul class="dropdown-menu mt-2 shadow" aria-labelledby="shopDropdown">
+
+      <!-- PPE with click-to-open nested submenu -->
+      <li class="dropdown-submenu position-relative">
+  <a class="dropdown-item dropdown-toggle" href="#" id="ppeDropdown"
+     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    PPE
+  </a>
+
+  <ul class="dropdown-menu position-absolute top-0 start-100 mt-0 ms-0 shadow"
+      style="min-width: 180px; padding: 0.5rem 0;">
+
+    <!-- By Category -->
+    <li class="dropdown-submenu position-relative">
+      <a class="dropdown-item dropdown-toggle py-2 px-3" href="#">
+        By Category
+      </a>
+
+      <ul class="dropdown-menu position-absolute top-0 start-100 shadow"
+          style="min-width: 260px;">
+
+        <li><a class="dropdown-item" href="/handgloves">Hand Gloves</a></li>
+        <li><a class="dropdown-item" href="/safetyboots">Safety Boots (Ankle)</a></li>
+        <li><a class="dropdown-item" href="/safetyharnessandlanyards">Safety Harness & Lanyards</a></li>
+        <li><a class="dropdown-item" href="/fallarrestors">Fall Arrestors</a></li>
+        <li><a class="dropdown-item" href="/safetygoogles">Safety Eye Goggles</a></li>
+        <li><a class="dropdown-item" href="/safetyshoes">Safety Shoes</a></li>
+        <li><a class="dropdown-item" href="/flashlights">Flash Lights</a></li>
+        <li><a class="dropdown-item" href="/safetyraincoatsandboots">Safety Raincoats & Boots</a></li>
+        <li><a class="dropdown-item" href="/gasdetectors">Gas Detectors</a></li>
+        <li><a class="dropdown-item" href="/emergencyeyewash">Emergency Eye Wash Station</a></li>
+        <li><a class="dropdown-item" href="/spillkits">Spill Kits</a></li>
+        <li><a class="dropdown-item" href="/firstaids">First Aids</a></li>
+
+        <!-- Clothing -->
+        <li class="dropdown-submenu position-relative">
+          <a class="dropdown-item dropdown-toggle" href="#">Clothing</a>
+          <ul class="dropdown-menu position-absolute top-0 start-100 shadow">
+            <li><a class="dropdown-item" href="/coveralls">Coveralls / Overalls</a></li>
+            <li><a class="dropdown-item" href="/reflectivevests">Reflective Jackets</a></li>
+            <li><a class="dropdown-item" href="/labcoats">Lab Coats</a></li>
+            <li><a class="dropdown-item" href="/firesuits">Fire-Resistant Suits</a></li>
+            <li><a class="dropdown-item" href="/chemicalresistant">Chemical-Resistant Wears</a></li>
+            <li><a class="dropdown-item" href="/rainwear">Rain Wears</a></li>
+            <li><a class="dropdown-item" href="/umbrellas">Umbrellas</a></li>
+          </ul>
+        </li>
+
+        <li><a class="dropdown-item" href="/securitygears">Security Gears</a></li>
+        <li><a class="dropdown-item" href="/stanchions">Stanchions</a></li>
+
+        <!-- Head Protection -->
+        <li class="dropdown-submenu position-relative">
+          <a class="dropdown-item dropdown-toggle" href="#">Head Protections</a>
+          <ul class="dropdown-menu position-absolute top-0 start-100 shadow">
+            <li><a class="dropdown-item" href="/safetyhelmets">Safety Helmets</a></li>
+            <li><a class="dropdown-item" href="/bumpcaps">Bump Caps</a></li>
+            <li><a class="dropdown-item" href="/weldinghelmets">Welding Helmets</a></li>
+            <li><a class="dropdown-item" href="/faceshields">Face Shields</a></li>
+          </ul>
+        </li>
+
+        <!-- Respiratory -->
+        <li class="dropdown-submenu position-relative">
+          <a class="dropdown-item dropdown-toggle" href="#">Respiratory & Hearing</a>
+          <ul class="dropdown-menu position-absolute top-0 start-100 shadow">
+            <li><a class="dropdown-item" href="/nosemasks">Nose Masks</a></li>
+            <li><a class="dropdown-item" href="/earplugs">Ear Plugs</a></li>
+            <li><a class="dropdown-item" href="/earmuffs">Ear Muffs</a></li>
+          </ul>
+        </li>
+
+        <!-- Life Saving -->
+        <li class="dropdown-submenu position-relative">
+          <a class="dropdown-item dropdown-toggle" href="#">Life Saving Equipment</a>
+          <ul class="dropdown-menu position-absolute top-0 start-100 shadow">
+            <li><a class="dropdown-item" href="/lifejackets">Life Jackets</a></li>
+            <li><a class="dropdown-item" href="/lifevests">Life Vests</a></li>
+            <li><a class="dropdown-item" href="/lifebuoys">Life Buoys</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- By Brand (UNCHANGED) -->
+ <li class="dropdown-submenu position-relative">
+  <a class="dropdown-item dropdown-toggle py-2 px-3" href="#">
+    By Brand
+  </a>
+
+  <ul class="dropdown-menu position-absolute top-0 start-100 shadow"
+      style="min-width: 220px;">
+
+    <li><a class="dropdown-item" href="/beta">Beta</a></li>
+     <li><a class="dropdown-item" href="/uvex">Uvex</a></li>
+    <li><a class="dropdown-item" href="/dickies">Dickies</a></li>
+    <li><a class="dropdown-item" href="/portwest">Portwest</a></li>
+    <li><a class="dropdown-item" href="/redwings">Redwings</a></li>
+    <li><a class="dropdown-item" href="/safetyjoggers">Safety Joggers</a></li>
+    <li><a class="dropdown-item" href="/supersteel">Super Steel</a></li>
+    <li><a class="dropdown-item" href="/threem">3M</a></li>
+    <li><a class="dropdown-item" href="/msa">MSA</a></li>
+
+  </ul>
+</li>
+
+
+  </ul>
+</li>
+
+
+<li class="dropdown-submenu power-tools-menu">
+  <a class="dropdown-item" routerLink="/powertools">
+    Power Hand Tools ▸
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <!-- BY CATEGORY -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/bycategory">By Category ▸</a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/grinders">Grinders</a></li>
+        <li><a class="dropdown-item" routerLink="/sanders">Sanders</a></li>
+        <li><a class="dropdown-item" routerLink="/impactwrenches">Impact Wrenches</a></li>
+        <li><a class="dropdown-item" routerLink="/heatguns">Heat Guns</a></li>
+        <li><a class="dropdown-item" routerLink="/cuttingmachines">Cutting Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/mixers">Mixers</a></li>
+        <li><a class="dropdown-item" routerLink="/polishers">Polishers</a></li>
+        <li><a class="dropdown-item" routerLink="/sprayguns">Spray Guns</a></li>
+        <li><a class="dropdown-item" routerLink="/bagclosermachines">Bag Closer Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/nailers">Nailers</a></li>
+        <li><a class="dropdown-item" routerLink="/trimmers">Trimmers</a></li>
+        <li><a class="dropdown-item" routerLink="/impulsesealers">Impulse Sealers</a></li>
+        <li><a class="dropdown-item" routerLink="/planers">Planers</a></li>
+        <li><a class="dropdown-item" routerLink="/pprmachines">PPR Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/routers">Routers</a></li>
+        <li><a class="dropdown-item" routerLink="/edgebanders">Edge Banding Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/wallchasers">Wall Chasers</a></li>
+        <li><a class="dropdown-item" routerLink="/greaseguns">Grease Guns</a></li>
+        <li><a class="dropdown-item" routerLink="/combokits">Combo Kits</a></li>
+
+        <!-- DRILLS -->
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" routerLink="/drills">Drills ▸</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/cordeddrills">Corded Drills</a></li>
+            <li><a class="dropdown-item" routerLink="/cordlessdrillsanddrivers">Cordless Drills & Drivers</a></li>
+            <li><a class="dropdown-item" routerLink="/rotaryhammerdrills">Rotary Hammer Drills</a></li>
+            <li><a class="dropdown-item" routerLink="/drillpresses">Drill Presses</a></li>
+            <li><a class="dropdown-item" routerLink="/magneticdrills">Magnetic Drills</a></li>
+            <li><a class="dropdown-item" routerLink="/coredrills">Core Drills</a></li>
+          </ul>
+        </li>
+
+        <!-- SAWS -->
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" routerLink="/saws">Saws ▸</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/circularsaws">Circular Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/jigsaws">Jig Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/reciprocatingsaws">Reciprocating Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/tablesaws">Table Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/mitresaws">Mitre Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/chainsaws">Chain Saws</a></li>
+            <li><a class="dropdown-item" routerLink="/bandsaws">Band Saws</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- BY BRAND -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/bybrand">By Brand ▸</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/ingco">Ingco</a></li>
+        <li><a class="dropdown-item" routerLink="/maxmech">Maxmech</a></li>
+        <li><a class="dropdown-item" routerLink="/total">Total</a></li>
+        <li><a class="dropdown-item" routerLink="/makita">Makita</a></li>
+        <li><a class="dropdown-item" routerLink="/bosch">Bosch</a></li>
+        <li><a class="dropdown-item" routerLink="/dewalt">Dewalt</a></li>
+        <li><a class="dropdown-item" routerLink="/stanley">Stanley</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+  <!-- sealant & Adhesives -->
+<li class="dropdown-submenu sealant-menu">
+  <a class="dropdown-item" routerLink="/sealantandadhesive">
+    Sealant & Adhesives ▸
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" routerLink="/siliconesealants">Silicone Sealants</a></li>
+    <li><a class="dropdown-item" routerLink="/pufoamsealants">PU Foam Sealants</a></li>
+    <li><a class="dropdown-item" routerLink="/epoxyadhesives">Epoxy Adhesives</a></li>
+    <li><a class="dropdown-item" routerLink="/constructionadhesives">Construction Adhesives</a></li>
+    <li><a class="dropdown-item" routerLink="/woodglues">Glues</a></li>
+    <li><a class="dropdown-item" routerLink="/tilesadhesives">Tiles Adhesives</a></li>
+    <li><a class="dropdown-item" routerLink="/contactadhesives">Contact Adhesives</a></li>
+    <li><a class="dropdown-item" routerLink="/waterproofsealants">Waterproof Sealants</a></li>
+    <li><a class="dropdown-item" routerLink="/spraypaints">Spray Paints & Leak Fillers</a></li>
+    <li><a class="dropdown-item" routerLink="/gums">Gums</a></li>
+  </ul>
+</li>
+
+<!-- traffic & traffic -->
+<li class="dropdown-submenu safety-menu">
+
+  <a class="dropdown-item" routerLink="/safetyandtrafficc">
+    Safety & Traffic ▸
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <!-- Traffic Safety -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/trafficsafety">
+        Traffic Safety ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/trafficcones">Traffic Cones</a></li>
+        <li><a class="dropdown-item" routerLink="/roadbarriers">Road Barriers</a></li>
+        <li><a class="dropdown-item" routerLink="/warningsigns">Warning Signs</a></li>
+        <li><a class="dropdown-item" routerLink="/speedbumps">Speed Bumps</a></li>
+        <li><a class="dropdown-item" routerLink="/reflectors">Reflectors</a></li>
+        <li><a class="dropdown-item" routerLink="/safetyvests">Safety Vests</a></li>
+        <li><a class="dropdown-item" routerLink="/cautionsigns">Caution Signs</a></li>
+        <li><a class="dropdown-item" routerLink="/cautiontapes">Caution Tapes</a></li>
+        <li><a class="dropdown-item" routerLink="/wheelchokes">Wheel Chocks</a></li>
+        <li><a class="dropdown-item" routerLink="/convexmirrors">Convex Mirrors</a></li>
+        <li><a class="dropdown-item" routerLink="/inspectionmirrors">Inspection Mirrors</a></li>
+        <li><a class="dropdown-item" routerLink="/metaldetectors">Metal Detectors / Scanners</a></li>
+      </ul>
+    </li>
+
+  
+
+    
+    <!-- Fire Safety -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/firesafety">
+        Fire Safety ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/fireextinguishers">Fire Extinguishers</a></li>
+        <li><a class="dropdown-item" routerLink="/fireblankets">Fire Blankets</a></li>
+        <li><a class="dropdown-item" routerLink="/smokeandfirealarms">Smoke & Fire Alarms</a></li>
+        <li><a class="dropdown-item" routerLink="/firehose">Fire Hose</a></li>
+        <li><a class="dropdown-item" routerLink="/firehosecabinet">Fire Hose Cabinet</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+    <!-- Workshop & Garage  -->
+<li class="dropdown-submenu workshop-menu">
+
+  <a class="dropdown-item" routerLink="/workshopandgarage">
+    Workshop & Garage ▸
+  </a>
+
+ <ul class="dropdown-menu workshop-root">
+
+
+    <!-- 👇 SCROLL WRAPPER (THIS WAS MISSING) -->
+    <div class="dropdown-scroll">
+
+      <!-- Workshop Equipment -->
+      <li class="dropdown-submenu">
+        <a class="dropdown-item" routerLink="/workshopequipments">
+          Workshop Equipment ▸
         </a>
-        <ul class="dropdown-menu mt-2 shadow" aria-labelledby="shopDropdown">
-          <li><a class="dropdown-item" href="#">Safety & PPE</a></li>
-          <li><a class="dropdown-item" href="#">Power Hand Tools</a></li>
-          <li><a class="dropdown-item" href="#">Sealant & Adhesives</a></li>
-          <li><a class="dropdown-item" href="#">Safety & Traffic</a></li>
-          <li><a class="dropdown-item" href="#">Workshop & Garage</a></li>
-          <li><a class="dropdown-item" href="#">Electrical & Equipment</a></li>
-          <li><a class="dropdown-item" href="#">Measuring & Testing</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Construction Equipment</a></li>
-          <li><a class="dropdown-item" href="#">Farm Equipment</a></li>
-          <li><a class="dropdown-item" href="#">Hand Tools & Accessories</a></li>
-          <li><a class="dropdown-item" href="#">Cleaning & Garden Supplies</a></li>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/toolscabinets">Tool Cabinets</a></li>
+          <li><a class="dropdown-item" routerLink="/workbenches">Work Benches</a></li>
+          <li><a class="dropdown-item" routerLink="/aircompressors">Air Compressors</a></li>
+          <li><a class="dropdown-item" routerLink="/powerextensionandreels">Power Extension & Reels</a></li>
+          <li><a class="dropdown-item" routerLink="/toolssets">Tool Sets</a></li>
+          <li><a class="dropdown-item" routerLink="/carcreepers">Car Creepers</a></li>
+          <li><a class="dropdown-item" routerLink="/greasebuckets">Grease Buckets</a></li>
+          <li><a class="dropdown-item" routerLink="/rotarypumps">Rotary Hand Pumps</a></li>
+          <li><a class="dropdown-item" routerLink="/trolleys">Trolleys</a></li>
+          <li><a class="dropdown-item" routerLink="/pallettrucks">Pallet Trucks</a></li>
         </ul>
       </li>
+
+      <!-- Lifting & Handling -->
+      <li class="dropdown-submenu">
+        <a class="dropdown-item" routerLink="/lifting">
+          Lifting & Handling ▸
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/jackandlifts">Jacks & Lifts</a></li>
+          <li><a class="dropdown-item" routerLink="/chainblocksandhoists">Chain Blocks & Hoists</a></li>
+          <li><a class="dropdown-item" routerLink="/drumhandlingequipments">Drum Handling Equipment</a></li>
+          <li><a class="dropdown-item" routerLink="/enginecranes">Engine Cranes</a></li>
+          <li><a class="dropdown-item" routerLink="/liftingbelts">Lifting Belts</a></li>
+          <li><a class="dropdown-item" routerLink="/palletestackers">Pallet Stackers</a></li>
+        </ul>
+      </li>
+
+      <!-- Wheel Service -->
+      <li class="dropdown-submenu">
+        <a class="dropdown-item" routerLink="/wheelserviceequipment">
+          Wheel Service Equipment ▸
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/wheelbalancers">Wheel Balancers</a></li>
+          <li><a class="dropdown-item" routerLink="/wheelalignmentgauges">Wheel Alignment Gauges</a></li>
+          <li><a class="dropdown-item" routerLink="/wheelchocks">Wheel Chocks</a></li>
+          <li><a class="dropdown-item" routerLink="/wheellockers">Wheel Lockers</a></li>
+          <li><a class="dropdown-item" routerLink="/tirechangers">Tire Changers</a></li>
+        </ul>
+      </li>
+
+      <!-- Ladders -->
+      <li class="dropdown-submenu">
+        <a class="dropdown-item" routerLink="/ladders">
+          Ladders ▸
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/stepladders">Step Ladders</a></li>
+          <li><a class="dropdown-item" routerLink="/extensionladders">Extension Ladders</a></li>
+          <li><a class="dropdown-item" routerLink="/foldingladders">Folding Ladders</a></li>
+        </ul>
+      </li>
+
+    </div>
+    <!-- 👆 END SCROLL WRAPPER -->
+
+  </ul>
+</li>
+
+
+   <!-- Electrical & Equipment -->
+
+<li class="dropdown-submenu">
+  <a class="dropdown-item" routerLink="/electricalequipment">
+    Electrical Equipment ▸
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <li><a class="dropdown-item" routerLink="/batteries">Batteries</a></li>
+    <li><a class="dropdown-item" routerLink="/bagclosers">Bag Closers</a></li>
+    <li><a class="dropdown-item" routerLink="/autocompressors">Auto Compressors</a></li>
+    <li><a class="dropdown-item" routerLink="/cablewiresandboosters">Cable Wires & Cable Boosters</a></li>
+    <li><a class="dropdown-item" routerLink="/extensioncablewires">Extension Cable Wires</a></li>
+    <li><a class="dropdown-item" routerLink="/plasmacutters">Plasma Cutters</a></li>
+    <li><a class="dropdown-item" routerLink="/aircompressors">Air Compressors</a></li>
+    <li><a class="dropdown-item" routerLink="/batterytesters">Battery Testers</a></li>
+    <li><a class="dropdown-item" routerLink="/batterychargers">Battery Chargers</a></li>
+
+    <!-- Generators -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/generators">
+        Generators ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/dieselgenerators">Diesel Generators</a></li>
+        <li><a class="dropdown-item" routerLink="/petrolgenerators">Petrol Generators</a></li>
+        <li><a class="dropdown-item" routerLink="/inverters">Inverter Generators</a></li>
+      </ul>
+    </li>
+
+    <!-- Welding Machines -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/weldingmachines">
+        Welding Machines ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/tigweldingmachines">TIG Welding Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/mmaweldingmachines">MMA Welding Machines</a></li>
+        <li><a class="dropdown-item" routerLink="/migweldingmachines">MIG Welding Machines</a></li>
+      </ul>
+    </li>
+   
+      
+
+  </ul>
+</li>
+
+         <!-- Measuring & Testing -->
+<li class="dropdown-submenu measuring-menu">
+  <a class="dropdown-item" href="/measuringandtesting">
+    Measuring And Testing ▸
+  </a>
+
+  <ul class="dropdown-menu measuring-root">
+
+    <!-- Fuel Testing -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/fueltestingandmeasuring">
+        Fuel Testing And Measuring ▸
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/fuelmeters">Fuel Meters</a></li>
+        <li><a class="dropdown-item" href="/hydromters">Hydrometers</a></li>
+        <li><a class="dropdown-item" href="/fuelanddieseltestingkits">Fuel & Diesel Testing Kits</a></li>
+        <li><a class="dropdown-item" href="/thermometers">Thermometers</a></li>
+        <li><a class="dropdown-item" href="/measuringcans">Measuring Cans</a></li>
+      </ul>
+    </li>
+
+    <!-- General Measuring -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/generalmeasuring">
+        General Measuring Instruments ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/meters">Measuring Meters</a></li>
+        <li><a class="dropdown-item" href="/multimeters">Multimeters</a></li>
+
+        <!-- Calipers -->
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" href="/calipers">
+            Calipers ▸
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/digitalcalipers">Digital Calipers</a></li>
+            <li><a class="dropdown-item" href="/verniercailpers">Vernier Calipers</a></li>
+          </ul>
+        </li>
+
+        <!-- Micrometers -->
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" href="/micrometers">
+            Micrometers ▸
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/analoguemicromters">Analogue</a></li>
+            <li><a class="dropdown-item" href="/digitalmicrometers">Digital</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Leveling Tools -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/levelingTools">
+        Leveling Tools ▸
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/spiritlevels">Spirit Levels</a></li>
+        <li><a class="dropdown-item" href="/laserlevels">Laser Levels</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+
+      <li><hr class="dropdown-divider"></li>
+      <li class="dropdown-submenu">
+  <a class="dropdown-item" routerLink="/handtoolsandaccessories">
+    Hand Tools & Accessories ▸
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <!-- By Category -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/bycategory">
+        By Category ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/spannersandwrenches">Spanners & Wrenches</a></li>
+        <li><a class="dropdown-item" routerLink="/hammersandmallets">Hammers & Mallets</a></li>
+        <li><a class="dropdown-item" routerLink="/screwdrivers">Screwdrivers</a></li>
+        <li><a class="dropdown-item" routerLink="/pliersandcutters">Pliers & Cutters</a></li>
+        <li><a class="dropdown-item" routerLink="/socketsandracthets">Sockets & Ratchets</a></li>
+        <li><a class="dropdown-item" routerLink="/measuringtapes">Measuring Tapes</a></li>
+        <li><a class="dropdown-item" routerLink="/utilityknivesandblades">Utility Knives & Blades</a></li>
+        <li><a class="dropdown-item" routerLink="/chiselsandpunches">Chisels & Punches</a></li>
+        <li><a class="dropdown-item" routerLink="/toolsbags">Tool Bags</a></li>
+        <li><a class="dropdown-item" routerLink="/toolsboxes">Tool Boxes</a></li>
+        <li><a class="dropdown-item" routerLink="/handriveters">Hand Riveters</a></li>
+        <li><a class="dropdown-item" routerLink="/crimpingtools">Crimping Tools</a></li>
+        <li><a class="dropdown-item" routerLink="/tilescutters">Tile Cutters</a></li>
+        <li><a class="dropdown-item" routerLink="/drivers">Drivers</a></li>
+        <li><a class="dropdown-item" routerLink="/flaringtools">Flaring Tools</a></li>
+        <li><a class="dropdown-item" routerLink="/bearingpullers">Bearing Pullers</a></li>
+        <li><a class="dropdown-item" routerLink="/toolssets">Tool Sets</a></li>
+        <li><a class="dropdown-item" routerLink="/saws">Saws</a></li>
+      </ul>
+    </li>
+
+    <!-- Accessories -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/handtoolsaccessories">
+        Hand Tool Accessories ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/drillbits">Drill Bits</a></li>
+        <li><a class="dropdown-item" routerLink="/sawblades">Saw Blades</a></li>
+        <li><a class="dropdown-item" routerLink="/sandingpads">Sanding Pads</a></li>
+        <li><a class="dropdown-item" routerLink="/polishingpadsandbuffers">Polishing Pads & Buffers</a></li>
+        <li><a class="dropdown-item" routerLink="/cuttingandgrindingdisc">Cutting & Grinding Discs</a></li>
+        <li><a class="dropdown-item" routerLink="/allenkeys">Allen Keys</a></li>
+        <li><a class="dropdown-item" routerLink="/screwdriverbits">Screwdriver Bits</a></li>
+      </ul>
+    </li>
+
+    <!-- By Brand -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" routerLink="/bybrand">
+        By Brand ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="/stanley">Stanley</a></li>
+        <li><a class="dropdown-item" routerLink="/bosch">Bosch</a></li>
+        <li><a class="dropdown-item" routerLink="/makita">Makita</a></li>
+        <li><a class="dropdown-item" routerLink="/ingco">Ingco</a></li>
+        <li><a class="dropdown-item" routerLink="/total">Total</a></li>
+        <li><a class="dropdown-item" routerLink="/maxmech">Maxmech</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+          <!-- construction equipment -->
+<li class="dropdown-submenu construction-menu">
+  <a class="dropdown-item" href="/constructionequipment">
+    Construction Equipment ▸
+  </a>
+
+  <ul class="dropdown-menu construction-root">
+    <li><a class="dropdown-item" href="/concretemixers">Concrete Mixers</a></li>
+    <li><a class="dropdown-item" href="/jumpingrammers">Jumping Rammers</a></li>
+    <li><a class="dropdown-item" href="/wheelbarrows">Wheelbarrows</a></li>
+    <li><a class="dropdown-item" href="/compactors">Plate Compactors</a></li>
+    <li><a class="dropdown-item" href="/concretevibrators">Concrete Vibrators</a></li>
+    <li><a class="dropdown-item" href="/powertrowels">Power Trowels</a></li>
+    <li><a class="dropdown-item" href="/constructionsafetygear">Construction Safety Gears</a></li>
+    <li><a class="dropdown-item" href="/fallarrestors">Fall Arrestors</a></li>
+    <li><a class="dropdown-item" href="/ropes">Ropes</a></li>
+    <li><a class="dropdown-item" href="/pokerhoses">Poker Hoses</a></li>
+    <li><a class="dropdown-item" href="/steelbarcuttingmachines">Steel Bar Cutting Machines</a></li>
+    <li><a class="dropdown-item" href="/drumtrucks">Drum Trucks</a></li>
+  </ul>
+</li>
+          <!-- pumping machines -->
+         <li class="dropdown-submenu pumping-menu">
+  <a class="dropdown-item" href="/pumpingmachines">
+    Pumping Machines ▸
+  </a>
+
+  <ul class="dropdown-menu pumping-root">
+    <li><a class="dropdown-item" href="/waterpumps">Water Pumps</a></li>
+    <li><a class="dropdown-item" href="/submersiblepumps">Submersible Pumps</a></li>
+    <li><a class="dropdown-item" href="/fueltransferpumps">Fuel Transfer Pumps</a></li>
+    <li><a class="dropdown-item" href="/handrotarypumps">Hand / Rotary Pumps</a></li>
+    <li><a class="dropdown-item" href="/pressurepumps">Pressure Pumps</a></li>
+    <li><a class="dropdown-item" href="/vacuumpumps">Vacuum Pumps</a></li>
+  </ul>
+</li>
+                 <!-- farm Equipment -->
+<li class="dropdown-submenu farm-menu">
+  <a class="dropdown-item" href="/farmequipments">
+    Farm Equipments ▸
+  </a>
+
+  <ul class="dropdown-menu farm-root">
+    <li><a class="dropdown-item" href="/farmmachines">Farm Machines</a></li>
+    <li><a class="dropdown-item" href="/farmtools">Farm Tools</a></li>
+  </ul>
+</li>
+
+            <!-- Cleaning And Garden Supplies            -->
+   <li class="dropdown-submenu cleaning-menu">
+  <a class="dropdown-item" href="/cleaninandgardensupplies">
+    Cleaning And Garden Supplies ▸
+  </a>
+
+  <ul class="dropdown-menu cleaning-root">
+
+    <li>
+      <a class="dropdown-item" href="/cleaningaccessories">
+        Cleaning Accessories
+      </a>
+    </li>
+
+    <!-- PRESSURE WASHERS -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/pressurewashers">
+        Pressure Washers ▸
+      </a>
+
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" href="/bycategory">
+            By Category ▸
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/electricpressurewashers">Electric Pressure Washers</a></li>
+            <li><a class="dropdown-item" href="/petrolpressurewashers">Petrol Pressure Washers</a></li>
+            <li><a class="dropdown-item" href="/industrialpressurewashers">Industrial Pressure Washers</a></li>
+            <li><a class="dropdown-item" href="/cordlesspressurewashers">Cordless Pressure Washers</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+          <a class="dropdown-item" href="/bybrand">
+            By Brand ▸
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/ingco">Ingco</a></li>
+            <li><a class="dropdown-item" href="/bosch">Bosch</a></li>
+            <li><a class="dropdown-item" href="/maxmech">Maxmech</a></li>
+            <li><a class="dropdown-item" href="/karcher">Karcher</a></li>
+          </ul>
+        </li>
+
+        <li><a class="dropdown-item" href="/accessories">Accessories</a></li>
+      </ul>
+    </li>
+
+    <!-- BLOWERS -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/blowers">Blowers ▸</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/cordlessblowers">Cordless Blowers</a></li>
+        <li><a class="dropdown-item" href="/electricblowers">Electric Blowers</a></li>
+        <li><a class="dropdown-item" href="/gasolineblowers">Gasoline Blowers</a></li>
+      </ul>
+    </li>
+
+    <!-- HOSE -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item" href="/hose">Hose ▸</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/waterhose">Water Hose</a></li>
+        <li><a class="dropdown-item" href="/pressurehose">Pressure Hose</a></li>
+        <li><a class="dropdown-item" href="/pumphose">Pump Hose</a></li>
+        <li><a class="dropdown-item" href="/hoseaccessories">Hose Accessories</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+
     </ul>
+  </li>
+</ul>
+
 
     <!-- Mobile Toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,60 +682,49 @@
     <!-- Navbar Links -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav align-items-lg-center">
-        <!-- Mobile version of dropdown -->
+
+        <!-- Mobile Shop Dropdown -->
         <li class="nav-item dropdown d-lg-none">
           <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="mobileShopDropdown"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-list shop-icon me-2" style="color:#ffba00;"></i> Shop by Category
           </a>
           <ul class="dropdown-menu mt-2 shadow" aria-labelledby="mobileShopDropdown">
-            <li><a class="dropdown-item" href="/ppe">Safety & PPE</a></li>
-            <li><a class="dropdown-item" href="/powertools">Power Hand Tools</a></li>
-            <li><a class="dropdown-item" href="/sealantadhesive">Sealant & Adhesives</a></li>
-            <li><a class="dropdown-item" href="#">Safety & Traffic</a></li>
-            <li><a class="dropdown-item" href="#">Workshop & Garage</a></li>
-            <li><a class="dropdown-item" href="#">Electrical & Equipment</a></li>
-            <li><a class="dropdown-item" href="#">Measuring & Testing</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Construction Equipment</a></li>
-            <li><a class="dropdown-item" href="#">Farm Equipment</a></li>
-            <li><a class="dropdown-item" href="#">Hand Tools & Accessories</a></li>
-            <li><a class="dropdown-item" href="#">Cleaning & Garden Supplies</a></li>
+            <li><a class="dropdown-item" routerLink="/shopcategories" (click)="$event.stopPropagation()">Safety & PPE</a></li>
+            <li><a class="dropdown-item" routerLink="/powertools" (click)="$event.stopPropagation()">Power Hand Tools</a></li>
+            <li><a class="dropdown-item" routerLink="/sealantadhesive" (click)="$event.stopPropagation()">Sealant & Adhesives</a></li>
+            <li><a class="dropdown-item" routerLink="/safetytraffic" (click)="$event.stopPropagation()">Safety & Traffic</a></li>
+            <li><a class="dropdown-item" routerLink="/workshopgarage" (click)="$event.stopPropagation()">Workshop & Garage</a></li>
+            <!-- Add remaining items similarly -->
           </ul>
         </li>
 
         <!-- Main Navigation Links -->
-       	<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Shop</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="dropdown-item" href="/shopcategories">Shop Category</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="/productdetails">Product Details</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="/productcheckout">Product Checkout</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="/shopcategories">Shopping Cart</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="confirmation.html">Confirmation</a></li>
-								</ul>
-							</li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/shopcategories">Shop Category</a></li>
+            <li><a class="dropdown-item" routerLink="/productdetails">Product Details</a></li>
+            <li><a class="dropdown-item" routerLink="/productcheckout">Product Checkout</a></li>
+            <li><a class="dropdown-item" routerLink="/shoppingcart">Shopping Cart</a></li>
+            <li><a class="dropdown-item" routerLink="/confirmation">Confirmation</a></li>
+          </ul>
         </li>
-       <li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="dropdown-item" href="/login">Login</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="/trackorder">Track Order</a></li>
-									<li class="nav-item"><a class="dropdown-item" href="/deliverypolicy">Delivery Policy</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="/warrantyandreturns">Warranty & Returns</a></li>
-								</ul>
-							</li>
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutus">About Us</a>
+        <li class="nav-item"><a class="nav-link" routerLink="/blog">Blog</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+            <li><a class="dropdown-item" routerLink="/trackorder">Track Order</a></li>
+            <li><a class="dropdown-item" routerLink="/deliverypolicy">Delivery Policy</a></li>
+            <li><a class="dropdown-item" routerLink="/warrantyandreturns">Warranty & Returns</a></li>
+             <!-- <li><a class="dropdown-item" routerLink="/faq">FAQ</a></li> -->
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/aboutus">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+
       </ul>
     </div>
   </div>
