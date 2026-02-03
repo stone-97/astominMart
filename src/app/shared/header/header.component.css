@@ -1,589 +1,368 @@
+/* ============================================================================
+   NAVBAR & MEGA MENU - FIXED VERSION (Centered + First Column Visible)
+   ============================================================================ */
 
+/* General Navbar */
+.navbar {
+  background-color: #001f3f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  overflow: visible !important;
+}
 
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: color 0.25s;
+}
 
-body {
-      font-family: 'Poppins', sans-serif;
-    }
-    .navbar {
-      background-color: #002147; /* dark navy */
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 0.8rem 1rem; /* adds slight height */
-    }
-    .navbar-brand img {
-      height: 120px; /* increased logo size */
-    }
-    .nav-link {
-      color: #ffffff !important;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      padding: 0.7rem 1rem; /* more space between links */
-    }
-    .nav-link:hover {
-      color: #ffba00 !important;
-    }
-    .nav-link.active {
-      color: #ffba00 !important;
-    }
-    .navbar-toggler {
-      border: none;
-      outline: none;
-    }
-    .navbar-toggler-icon {
-      filter: invert(1); /* makes toggler white */
-    }
-    .shop-icon {
-      margin-right: 6px;
-      color: #ffba00;
-    }
-    /* Aligns 'Shop by Category' closer to logo */
-    .shop-category {
-      margin-left: 20px;
-    }
-    /* Adds balanced spacing between menu items */
-    .navbar-nav .nav-item {
-      margin-right: 10px;
-    }
+.nav-link:hover,
+.nav-link.active {
+  color: #ffba00 !important;
+}
 
-    @media (max-width: 991px) {
-      .navbar-nav .nav-item {
-        margin-right: 0;
-      }
-      .shop-category {
-        margin-left: 0;
-      }
-    }
+.shop-icon {
+  color: #ffba00;
+  font-size: 1.3rem;
+}
 
+/* ★★★ MOST IMPORTANT FIX ★★★ 
+   Allow mega menu to position relative to viewport/navbar, not the <li>
+*/
+.navbar-nav .dropdown {
+  position: static !important;
+}
 
+/* Mega Dropdown Container */
+.mega-dropdown {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: 92vw !important;
+  max-width: 1400px !important;
+  min-width: 1000px !important;
+  margin-top: 10px !important;
+  margin-left: 0 !important;
+  border-radius: 12px !important;
+  overflow: visible !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.22) !important;
+  z-index: 1055 !important;
+  padding: 30px 40px !important;           /* generous padding */
+  background: white;
+}
 
-     .navbar {
-    background-color: #001f3f; /* dark navy */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 0.8rem 1rem;
-  }
-  .nav-link {
-    color: #ffffff !important;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.6rem 1.2rem;
-  }
-  .nav-link:hover,
-  .nav-link.active {
-    color: #ffba00 !important;
-  }
-  .navbar-toggler {
-    border: none;
-    outline: none;
-  }
-  .navbar-toggler-icon {
-    filter: invert(1);
-  }
-  .dropdown-menu {
-    border: none;
-    border-radius: 6px;
-  }
-  .dropdown-item {
-    font-weight: 500;
-    padding: 0.6rem 1.2rem;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-  .dropdown-item:hover {
-    background-color: #ffba00;
-    color: #fff;
-  }
+/* Row layout */
+.mega-dropdown .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -20px !important;
+  margin-left: -20px !important;
+  padding: 0 !important;
+}
 
+/* Columns - 4 equal columns */
+.mega-dropdown .col-lg-4 {
+  flex: 0 0 25% !important;
+  max-width: 25% !important;
+  padding: 0 20px !important;
+  min-height: 1px;
+  box-sizing: border-box;
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #ffba00 #f8f9fa;
+}
 
+/* Extra left padding for first column (Safety & PPE) – prevents cutoff */
+.mega-dropdown .row > .col-lg-4:first-child {
+  padding-left: 50px !important;           /* ← increased from 40px → 50px for safety */
+}
 
- /* Nested submenu */
+/* Column dividers */
+.mega-dropdown .row > div:not(:last-child) {
+  border-right: 1px solid #e9ecef !important;
+}
+
+/* Dropdown Items */
+.mega-dropdown .dropdown-item {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.18s ease;
+}
+
+.mega-dropdown .dropdown-item:hover {
+  background-color: #ffba00;
+  color: #001f3f !important;
+  transform: translateX(6px);
+  font-weight: 550;
+  padding-left: 1.5rem !important;
+}
+
+/* Headers */
+.mega-dropdown h5 {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+
+.mega-dropdown h5:hover {
+  color: #001f3f !important;
+}
+
+/* Submenu (right-side flyout) */
 .dropdown-submenu {
   position: relative;
 }
 
-/* Hide nested dropdown by default */
 .dropdown-submenu > .dropdown-menu {
-  display: none;
-  top: 0;
-  left: 100%; /* show to the right */
-  margin-top: 0;
-  min-width: 180px;
-}
-
-/* Show nested dropdown only when parent has 'show' class */
-.dropdown-submenu.show > .dropdown-menu {
-  display: block;
-}
-
-
-
-
-
-/* Prevent PPE submenu from opening when main dropdown opens */
-.dropdown-menu .dropdown-submenu > .dropdown-menu {
+  top: 0 !important;
+  left: 100% !important;
+  margin-top: -6px !important;
+  margin-left: 4px !important;
+  min-width: 280px !important;
+  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18) !important;
+  padding: 0.5rem 0 !important;
   display: none !important;
+  z-index: 1080 !important;
 }
 
-/* Show submenu ONLY on hover */
-.dropdown-menu .dropdown-submenu:hover > .dropdown-menu {
+.dropdown-submenu:hover > .dropdown-menu,
+.dropdown-submenu:focus-within > .dropdown-menu,
+.dropdown-submenu.show > .dropdown-menu {
   display: block !important;
 }
 
-
-
-
-/* MULTI-COLUMN layout for long dropdown lists */
-.dropdown-menu {
-  column-count: 2;          /* number of columns */
-  column-gap: 20px;
-  min-width: 420px;         /* enough space for columns */
-}
-
-/* Ensure list items stay clean inside columns */
-.dropdown-menu li {
-  break-inside: avoid;
-}
-
-/* Nested submenus (By Category / By Brand children) */
-.dropdown-submenu > .dropdown-menu {
-  column-count: 2;
-  min-width: 520px;
-}
-
-
-/* ===============================
-   FIX: restore MAIN dropdown
-   =============================== */
-.navbar > .container-fluid .dropdown-menu {
-  column-count: 1 !important;
-  min-width: auto !important;
-}
-
-/* Keep items intact inside columns */
-.dropdown-submenu > .dropdown-menu li {
-  break-inside: avoid;
-}
-
-
-/* Keep each item intact inside columns */
-.dropdown-submenu > .dropdown-menu li {
-  break-inside: avoid;
-}
-
-
-/* =========================================
-   FORCE columns ONLY on PPE subcategories
-   (By Category & By Brand)
-   ========================================= */
-
-/* Target dropdown-menu INSIDE another dropdown-menu */
-.navbar .dropdown-menu .dropdown-submenu > .dropdown-menu {
-  column-count: 2 !important;
-  column-gap: 28px;
-  min-width: 550px;
-}
-
-/* Keep list items from breaking across columns */
-.navbar .dropdown-menu .dropdown-submenu > .dropdown-menu li {
-  break-inside: avoid;
-}
-
-
-
-
-/* ===============================
-   FIX cutoff for deep submenus
-   =============================== */
-
-/* Normal submenus (By Category / By Brand) */
-/* .navbar .dropdown-menu .dropdown-submenu > .dropdown-menu {
-  left: 100%;
-  right: auto;
-} */
-
-
-
-/* MAIN dropdown 2-column layout */
-.mega-menu {
-  display: flex;
-  gap: 30px;
-  padding: 20px;
-  min-width: 750px;
-}
-
-/* Each column */
-.mega-column {
-  flex: 1;
-}
-
-/* Keep submenus intact */
-.mega-menu li ul.dropdown-menu {
-  position: absolute;
-}
-
-
-/* =========================================
-   SCROLL FIX FOR PPE DROPDOWNS (SAFE)
-   ========================================= */
-
-/* Apply scroll to ALL PPE submenus */
-#ppeDropdown + .dropdown-menu,
-#ppeDropdown + .dropdown-menu .dropdown-menu {
-  max-height: 75vh;        /* fits screen */
-  overflow-y: auto;        /* vertical scroll */
-  overflow-x: auto;        /* horizontal scroll */
-}
-
-/* Ensure deep submenus also scroll */
-#ppeDropdown + .dropdown-menu .dropdown-submenu > .dropdown-menu {
-  max-height: 75vh;
-  overflow-y: auto;
-  overflow-x: auto;
-}
-
-/* Smooth scrolling (optional, safe) */
-#ppeDropdown + .dropdown-menu,
-#ppeDropdown + .dropdown-menu .dropdown-menu {
-  scrollbar-width: thin;
-}
-
-
-
-/* =========================================
-   SCROLLER + SUBMENU FIX
-   Power Hand Tools ONLY
-   ========================================= */
-
-/* First-level dropdown (Power Hand Tools panel) */
-.power-tools-menu > .dropdown-menu {
-  max-height: 75vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Second-level dropdowns (By Category, By Brand) */
-.power-tools-menu
-  .dropdown-submenu
-  > .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Deep submenus (Drills, Saws, etc.) */
-.power-tools-menu
-  .dropdown-submenu
-  .dropdown-submenu
-  > .dropdown-menu {
-  max-height: 65vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Ensure proper positioning */
-.power-tools-menu .dropdown-submenu {
-  position: relative;
-}
-
-.power-tools-menu .dropdown-submenu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 1050;
-}
-
-/* Hover behavior (does NOT break Bootstrap) */
-.power-tools-menu
-  .dropdown-menu
-  .dropdown-submenu:hover
-  > .dropdown-menu {
-  display: block;
-}
-
-
-
-/* =========================================
-   SCROLLER + SUBMENU FIX
-   Sealant & Adhesives ONLY
-   ========================================= */
-
-/* Main Sealant dropdown */
-.sealant-menu > .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Ensure proper submenu positioning */
-.sealant-menu {
-  position: relative;
-}
-
-.sealant-menu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 1050;
-}
-
-/* Hover behavior */
-.sealant-menu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* Smooth scrollbar (optional, safe) */
-.sealant-menu > .dropdown-menu {
-  scrollbar-width: thin;
-}
-
-
-/* =========================================
-   SCROLLER + SUBMENU FIX
-   Safety & Traffic ONLY
-   ========================================= */
-
-/* Main Safety & Traffic dropdown */
-.safety-menu > .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Positioning */
-.safety-menu {
-  position: relative;
-}
-
-.safety-menu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 1050;
-}
-
-/* Hover behavior */
-.safety-menu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* Scrollbar (safe) */
-.safety-menu > .dropdown-menu {
-  scrollbar-width: thin;
-}
-
-/* ===============================
-   Submenus inside Safety & Traffic
-   =============================== */
-.safety-menu .dropdown-submenu > .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: visible;
-  scrollbar-width: thin;
-}
-
-/* =========================================
-   WORKSHOP & GARAGE – FINAL STABLE FIX
-   ========================================= */
-
-/* SCROLL ONLY THE FIRST LEVEL */
-.workshop-menu > .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: visible;
-}
-
-/* Base submenu positioning */
-.dropdown-submenu {
-  position: relative;
-}
-
-/* Side submenus */
-.dropdown-submenu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 240px;
-  display: none;
-  z-index: 1050;
-
-  max-height: 70vh;
-  overflow-y: auto;
-  background: #fff;
-}
-
-/* Hover open */
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* Prevent hover collapse */
-.dropdown-menu li {
-  position: relative;
-}
-
-/* ==============================
-   WORKSHOP & GARAGE – FINAL FIX
-   ============================== */
-
-/* FIRST LEVEL ONLY scrolls */
-.dropdown-menu.workshop-root {
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* each list item must NOT move */
-.dropdown-menu.workshop-root > li {
-  position: relative;
-}
-
-/* base submenu */
-.dropdown-submenu {
-  position: relative;
-}
-
-/* side submenus */
-.dropdown-submenu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 260px;
-
-  display: none;
-  z-index: 1060;
-
-  background: #fff;
-
-  /* independent scroll */
-  max-height: 70vh;
-  overflow-y: auto;
-}
-
-/* open on hover */
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* KEEP parent open when hovering child */
-.dropdown-submenu:hover {
-  pointer-events: auto;
-}
-
-/* prevent flicker / gaps */
-.dropdown-menu {
-  margin: 0;
-}
-
-
-
-
-
-/* =========================================
-   CONSTRUCTION EQUIPMENT – STABLE SCROLL
-   ========================================= */
-
-.construction-menu {
-  position: relative;
-}
-
-/* Side submenu positioning */
-.construction-menu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 260px;
-
-  max-height: 70vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  display: none;
-  background: #fff;
-  z-index: 1200;
-}
-
-/* Open on hover */
-.construction-menu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* Prevent collapse */
-.construction-menu .dropdown-menu li {
-  position: relative;
-}
-
 /* Scrollbar styling */
-.construction-menu .dropdown-menu::-webkit-scrollbar {
+.dropdown-menu::-webkit-scrollbar,
+.mega-dropdown .col-lg-4::-webkit-scrollbar {
   width: 6px;
 }
 
-.construction-menu .dropdown-menu::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
-  border-radius: 8px;
-}
-
-
-
-
-
-/* =========================================
-   CLEANING & GARDEN – SCROLLABLE MULTI MENU
-   ========================================= */
-
-/* ROOT MENU: vertical + horizontal scroll */
-.cleaning-menu > .dropdown-menu.cleaning-root {
-  max-height: 70vh;
-  overflow-y: auto;    /* vertical scroll */
-  overflow-x: auto;    /* horizontal scroll */
-  white-space: nowrap; /* keep items in one line */
-}
-
-/* each root item stays relative */
-.cleaning-menu > .dropdown-menu.cleaning-root > li {
-  position: relative;
-}
-
-/* nested submenu base */
-.cleaning-menu .dropdown-submenu {
-  position: relative;
-}
-
-/* side submenus */
-.cleaning-menu .dropdown-submenu > .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-
-  min-width: 240px;     /* width of submenu */
-  max-height: 60vh;     /* vertical scroll limit */
-
-  overflow-y: auto;     /* vertical scroll */
-  overflow-x: auto;     /* horizontal scroll if needed */
-  white-space: nowrap;   /* keep text in one line */
-
-  display: none;
-  background: #fff;
-  z-index: 1300;
-}
-
-/* show submenu on hover */
-.cleaning-menu .dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-
-/* prevent submenu from collapsing on hover gaps */
-.cleaning-menu .dropdown-menu li {
-  position: relative;
-}
-
-/* scrollbar style (optional) */
-.cleaning-menu .dropdown-menu::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-.cleaning-menu .dropdown-menu::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
+.dropdown-menu::-webkit-scrollbar-thumb,
+.mega-dropdown .col-lg-4::-webkit-scrollbar-thumb {
+  background: #adb5bd;
   border-radius: 10px;
 }
+
+/* ───────────────────────────────────────────────
+   MOBILE BEHAVIOR
+──────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .mega-dropdown {
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  .mega-dropdown .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e9ecef !important;
+    margin-bottom: 20px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Reset extra left padding on mobile */
+  .mega-dropdown .row > .col-lg-4:first-child {
+    padding-left: 15px !important;
+  }
+}
+
+/* === FIX MEGA MENU POSITION JUMPING === */
+
+/* Anchor dropdowns to navbar, not page */
+.navbar .dropdown {
+  position: static;
+}
+
+/* Main mega dropdown stays centered */
+.navbar .dropdown-menu.mega-dropdown {
+  position: absolute;
+  left: 50% !important;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Prevent Bootstrap JS from forcing left alignment */
+.navbar .dropdown-menu {
+  right: auto !important;
+}
+
+/* Submenu positioning (no jumping left) */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.25rem;
+}
+
+/* Desktop hover support (optional but recommended) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   TOP BAR – Completely independent from mega menu / navbar dropdowns
+   ============================================================================ */
+
+.top-bar {
+  background-color: #f8f9fa !important;     /* light gray – clean & modern */
+  /* If you want darker: #0a2540 */
+  /* If you want white: #ffffff */
+  border-bottom: 2px solid #ffba00 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
+  color: #001f3f !important;
+  z-index: 999 !important;                   /* just below navbar */
+}
+
+.top-bar .input-group-lg .form-control {
+  height: 56px;
+  font-size: 1.15rem;
+  background-color: white !important;
+  color: #001f3f !important;
+  border: 1px solid #ced4da !important;
+  padding-left: 1.75rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.top-bar .input-group-lg .form-control::placeholder {
+  color: #6c757d !important;
+}
+
+.top-bar .btn-warning {
+  height: 56px;
+  width: 60px;
+  background-color: #ffba00 !important;
+  border-color: #ffba00 !important;
+  color: #001f3f !important;
+  font-weight: bold;
+}
+
+.top-bar .btn-warning:hover {
+  background-color: #ffca2c !important;
+}
+
+/* Center search bar */
+.top-bar .input-group {
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Mobile – full width search */
+@media (max-width: 991px) {
+  .top-bar .input-group {
+    max-width: 100%;
+  }
+  .top-bar .list-inline-item {
+    margin: 0 1.2rem !important;
+  }
+}
+
+/* TOP BAR – Highest priority background fix – no conflict with mega menu */
+.top-bar {
+  background-color: #f8f9fa !important;           /* light gray – change to any color you want */
+  border-bottom: 2px solid #ffba00 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
+}
+
+/* Force text/icons to be readable on light background */
+.top-bar,
+.top-bar a,
+.top-bar i,
+.top-bar .btn-warning {
+  color: #001f3f !important;
+}
+
+/* Search input on light bg */
+.top-bar .form-control {
+  background-color: white !important;
+  border: 1px solid #ced4da !important;
+  color: #001f3f !important;
+}
+
+.top-bar .form-control::placeholder {
+  color: #6c757d !important;
+}
+
+.top-bar .dropdown-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.top-bar .dropdown-toggle:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.top-bar .dropdown-menu {
+  min-width: 200px;
+}
+
+
+/* Fix dropdown z-index – make sure it appears above navbar */
+.top-bar .dropdown-menu {
+  z-index: 1050 !important;           /* higher than navbar's 1000 */
+  margin-top: 0.5rem !important;
+}
+
+/* Optional: Prevent navbar from covering top bar content */
+.navbar {
+  z-index: 1000 !important;           /* keep it below top bar dropdowns */
+}
+
+
+/* Force welcome message to show – no hiding or clipping */
+.top-bar .welcome-message {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 180px;
+  white-space: nowrap;
+  overflow: visible !important;
+}
+
+/* Make sure parent columns don't clip it */
+.top-bar .col-auto {
+  overflow: visible !important;
+}
+
